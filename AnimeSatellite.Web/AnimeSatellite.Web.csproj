@@ -91,8 +91,38 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\app.component.html" />
+    <Content Include="app\movies\movies.component.html" />
+    <Content Include="app\news\news.component.css" />
+    <Content Include="app\news\news.component.html" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap_dark.css" />
+    <Content Include="Content\site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\banner.png" />
+    <Content Include="Images\banner_alpha.png" />
+    <Content Include="Images\banner_beta.png" />
+    <Content Include="Images\news\dragonballsuper.jpg" />
+    <Content Include="Images\news\gotenks.jpg" />
     <Content Include="index.html" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="app\news\news.json" />
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="styles.css" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -108,6 +138,7 @@
     <Content Include="packages.config" />
     <Content Include="package.json" />
     <Content Include="tsconfig.json" />
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -116,6 +147,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="ApiControllers\" />
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
@@ -125,6 +157,10 @@
     <TypeScriptCompile Include="app\app.component.ts" />
     <TypeScriptCompile Include="app\app.module.ts" />
     <TypeScriptCompile Include="app\main.ts" />
+    <TypeScriptCompile Include="app\movies\movies.component.ts" />
+    <TypeScriptCompile Include="app\news\news.component.ts" />
+    <TypeScriptCompile Include="app\news\news.ts" />
+    <TypeScriptCompile Include="app\shared\groupby.pipe.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

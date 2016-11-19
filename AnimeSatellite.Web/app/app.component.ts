@@ -1,7 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'my-app',
-    template: `<h1>Hello Angular JS 2</h1>`
+    selector: 'as-app',
+    moduleId: module.id,
+    templateUrl: 'app.component.html'
 })
-export class AppComponent { }
+export class AppComponent { 
+
+    selected: string;
+
+    menuSelect(menu: string): void {
+        this.selected = menu;
+    }
+    
+     ngOnInit(): void {
+        this.selected = "News";
+                             
+    }
+}

@@ -1,0 +1,14 @@
+﻿.maincontent {
+    display:block;
+    margin:0 auto;
+    width: 1200px;
+}
+
+.mainbgcolor {
+    /**background-color: #222; DARK**/
+    background-color: white; 
+}
+
+.subbgcolor {
+    background-color: #e0e1e3;
+}

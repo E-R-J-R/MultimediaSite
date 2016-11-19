@@ -1,0 +1,20 @@
+﻿[
+  {
+    "newsId": 1,
+    "newsHeader": "Leaf Rake",
+    "newsDetail": "GDN-0011",
+    "newsDate": "March 19, 2016",
+    "newsPublishedDate": null,
+    "newsSource": "Leaf rake with 48-inch wooden handle.",
+    "NewsImageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
+  },
+  {
+    "newsId": 2,
+    "newsHeader": "Dragonball",
+    "newsDetail": "Super Dragonball",
+    "newsDate": "March 19, 2016",
+    "newsPublishedDate": null,
+    "newsSource": "Test Source",
+    "NewsImageUrl": "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
+  }
+]

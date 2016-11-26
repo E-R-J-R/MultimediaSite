@@ -1,5 +1,6 @@
-﻿import { Component } from '@angular/core';
+﻿import { Component, OnInit } from '@angular/core';
 import { INews } from './news';
+import { NewsService } from './news.service';
 
 
 @Component({
@@ -8,60 +9,73 @@ import { INews } from './news';
     styleUrls: ['app/news/news.component.css']
 })
 export class NewsComponent { 
+
+    constructor(private _newsService: NewsService) { }
+
+    newsImageUrl: string;
+    errorMessage: string;
+
+    ngOnInit(): void {
+        this._newsService.getConfiguration('NewsImageUrl')
+                            .subscribe(config => this.newsImageUrl = config,
+                                       error => this.errorMessage = <any>error);
+                             
+    }
+
     newsList: INews[] = [
                           {
                             "newsId": 1,
                             "headline": "Dragonball Super",
                             "details": "GDN-0011",
-                            "date": "March 19, 2016",
+                            "date": "March 20, 2016",
                             "publishedDate": 'November 19, 2016',
                             "source": "Leaf rake with 48-inch wooden handle.",
-                            "imageFileName": "/Images/news/dragonballsuper.jpg"
+                            "imageFileName": "dragonballsuper.jpg"
                           },
                           {
                             "newsId": 2,
                             "headline": "Gotenks",
                             "details": "Super Dragonball",
-                            "date": "March 19, 2016",
+                            "date": "March 20, 2016",
                             "publishedDate": 'November 19, 2016',
                             "source": "Test Source",
-                            "imageFileName": "/Images/news/gotenks.jpg"
+                            "imageFileName": "gotenks.jpg"
                           },
                           {
                             "newsId": 3,
                             "headline": "Initial D Zero",
                             "details": "Super Dragonball",
-                            "date": "March 19, 2016",
+                            "date": "March 20, 2016",
                             "publishedDate": 'November 19, 2016',
                             "source": "Test Source",
-                            "imageFileName": "/Images/news/initialdzero.jpg"
+                            "imageFileName": "initialdzero.jpg"
                           },
                           {
                             "newsId": 4,
                             "headline": "Initial D FD",
                             "details": "Super Dragonball",
-                            "date": "March 19, 2016",
+                            "date": "March 20, 2016",
                             "publishedDate": 'November 20, 2016',
                             "source": "Test Source",
-                            "imageFileName": "/Images/news/mazda.jpg"
+                            "imageFileName": "mazda.jpg"
                           },
                           {
                             "newsId": 5,
                             "headline": "Gundam 00",
                             "details": "Super Dragonball",
-                            "date": "March 20, 2016",
+                            "date": "March 19, 2016",
                             "publishedDate": 'November 20, 2016',
                             "source": "Test Source",
-                            "imageFileName": "/Images/news/gundam00.jpg"
+                            "imageFileName": "gundam00.jpg"
                           },
                           {
                             "newsId": 6,
                             "headline": "00 Raiser",
                             "details": "Super Dragonball",
-                            "date": "March 20, 2016",
+                            "date": "March 19, 2016",
                             "publishedDate": 'November 20, 2016',
                             "source": "Test Source",
-                            "imageFileName": "/Images/news/00Raiser.jpg"
+                            "imageFileName": "00Raiser.jpg"
                           }
                        ];
 

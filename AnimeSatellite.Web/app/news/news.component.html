@@ -4,7 +4,7 @@
             <div class="dateheader">{{news.key}}</div>
             <div *ngFor="let item of news.value" class="col-md-4">
                 <div class="thumbnail">
-                    <img [src]='item.imageFileName'
+                    <img [src]='newsImageUrl + item.imageFileName'
                          [title]='item.headline'
                          [style.width.px]='300'
                          [style.height.px]='150'

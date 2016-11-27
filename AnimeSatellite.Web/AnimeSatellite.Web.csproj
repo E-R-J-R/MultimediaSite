@@ -45,6 +45,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.2.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.2.1\lib\net45\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Mvc5.4.0.0\lib\net451\Autofac.Integration.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.WebApi2.4.0.1\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -214,9 +226,17 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AnimeSatellite.Business\AnimeSatellite.Business.csproj">
+      <Project>{e114a99f-24c0-4bea-b3bc-602abc79e55c}</Project>
+      <Name>AnimeSatellite.Business</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AnimeSatellite.Core.DTO\AnimeSatellite.Core.DTO.csproj">
       <Project>{70D2DDD8-4815-4AAC-A211-A8937929101B}</Project>
       <Name>AnimeSatellite.Core.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AnimeSatellite.Core\AnimeSatellite.Core.csproj">
+      <Project>{282271e1-b4e2-4bd5-aa75-d61ca2baec21}</Project>
+      <Name>AnimeSatellite.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\AnimeSatellite.Domain\AnimeSatellite.Domain.csproj">
       <Project>{2859a124-a77c-415e-8728-af1ec243a543}</Project>

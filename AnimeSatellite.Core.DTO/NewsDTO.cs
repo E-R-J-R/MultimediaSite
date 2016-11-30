@@ -8,7 +8,7 @@ namespace AnimeSatellite.Core.DTO
 {
     public class NewsDTO
     {
-        public decimal NewsId { get; set; }
+        public int NewsId { get; set; }
         public string Headline { get; set; }
         public string Content { get; set; }
         public DateTime NewsDate { get; set; }

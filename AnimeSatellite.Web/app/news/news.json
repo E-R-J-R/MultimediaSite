@@ -1,20 +1,56 @@
 ﻿[
   {
     "newsId": 1,
-    "newsHeader": "Leaf Rake",
-    "newsDetail": "GDN-0011",
-    "newsDate": "March 19, 2016",
-    "newsPublishedDate": null,
-    "newsSource": "Leaf rake with 48-inch wooden handle.",
-    "NewsImageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
+    "headline": "Dragonball Super",
+    "content": "GDN-0011",
+    "newsDate": "March 20, 2016",
+    "publishedDate": "November 19, 2016",
+    "source": "Leaf rake with 48-inch wooden handle.",
+    "imageFileName": "dragonballsuper.jpg"
   },
   {
     "newsId": 2,
-    "newsHeader": "Dragonball",
-    "newsDetail": "Super Dragonball",
+    "headline": "Gotenks",
+    "content": "Super Dragonball",
+    "newsDate": "March 20, 2016",
+    "publishedDate": "November 19, 2016",
+    "source": "Test Source",
+    "imageFileName": "gotenks.jpg"
+  },
+  {
+    "newsId": 3,
+    "headline": "Initial D Zero",
+    "content": "Super Dragonball",
+    "newsDate": "March 20, 2016",
+    "publishedDate": "November 19, 2016",
+    "source": "Test Source",
+    "imageFileName": "initialdzero.jpg"
+  },
+  {
+    "newsId": 4,
+    "headline": "Initial D FD",
+    "content": "Super Dragonball",
+    "newsDate": "March 20, 2016",
+    "publishedDate": "November 20, 2016",
+    "source": "Test Source",
+    "imageFileName": "mazda.jpg"
+  },
+  {
+    "newsId": 5,
+    "headline": "Gundam 00",
+    "content": "Super Dragonball",
     "newsDate": "March 19, 2016",
-    "newsPublishedDate": null,
-    "newsSource": "Test Source",
-    "NewsImageUrl": "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
+    "publishedDate": "November 20, 2016",
+    "source": "Test Source",
+    "imageFileName": "gundam00.jpg"
+  },
+  {
+    "newsId": 6,
+    "headline": "00 Raiser",
+    "content": "Super Dragonball",
+    "newsDate": "March 19, 2016",
+    "publishedDate": "November 20, 2016",
+    "source": "Test Source",
+    "imageFileName": "00Raiser.jpg"
   }
 ]

@@ -8,7 +8,7 @@ namespace AnimeSatellite.Domain.Entities
 {
     public partial class NEWS
     {
-        public decimal NEWSID { get; set; }
+        public int NEWSID { get; set; }
         public string HEADLINE { get; set; }
         public string CONTENT { get; set; }
         public DateTime NEWSDATE { get; set; }

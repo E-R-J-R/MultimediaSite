@@ -1,9 +1,9 @@
 ﻿export interface INews {
-    newsId: number;
-    headline: string;
-    details: string;
-    date: string;
-    publishedDate: string;
-    source: string;
-    imageFileName: string; 
+    NewsId: number;
+    Headline: string;
+    Content: string;
+    NewsDate: string;
+    PublishedDate: string;
+    Source: string;
+    ImageFileName: string; 
 }

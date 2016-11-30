@@ -29,9 +29,10 @@ namespace AnimeSatellite.Web
             GlobalConfiguration.Configuration.DependencyResolver = resolver;
             DependencyResolver.SetResolver(new AutofacDependencyResolver(IoC.Container));
 
+            GlobalConfiguration.Configure(WebApiConfig.Register);
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            GlobalConfiguration.Configure(WebApiConfig.Register);
+           
 
             SetApplicationSettings();
         }
@@ -39,6 +40,7 @@ namespace AnimeSatellite.Web
         private void SetApplicationSettings()
         {
             ApplicationSettings.NewsImageUrl = System.Configuration.ConfigurationManager.AppSettings["NewsImageUrl"];
+            ApplicationSettings.NewsPageSize = int.Parse(System.Configuration.ConfigurationManager.AppSettings["NewsPageSize"]);
         }
     }
 }

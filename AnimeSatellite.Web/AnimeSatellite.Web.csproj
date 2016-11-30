@@ -185,6 +185,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiControllers\ConfigurationController.cs" />
+    <Compile Include="ApiControllers\NewsController.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Global.asax.cs">
@@ -229,6 +230,10 @@
     <ProjectReference Include="..\AnimeSatellite.Business\AnimeSatellite.Business.csproj">
       <Project>{e114a99f-24c0-4bea-b3bc-602abc79e55c}</Project>
       <Name>AnimeSatellite.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AnimeSatellite.Contracts\AnimeSatellite.Contracts.csproj">
+      <Project>{C80BD00B-5015-4CC9-B090-802260D37D1C}</Project>
+      <Name>AnimeSatellite.Contracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\AnimeSatellite.Core.DTO\AnimeSatellite.Core.DTO.csproj">
       <Project>{70D2DDD8-4815-4AAC-A211-A8937929101B}</Project>

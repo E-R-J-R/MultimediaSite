@@ -2,8 +2,11 @@
     NewsId: number;
     Headline: string;
     Content: string;
+    ContentType: string;
+    EmbedCode: string;
     NewsDate: string;
     PublishedDate: string;
-    Source: string;
+    SourceName: string;
+    SourceUrl: string;
     ImageFileName: string; 
 }

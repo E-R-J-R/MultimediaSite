@@ -152,6 +152,7 @@
     <Content Include="app\movies\movies.component.html" />
     <Content Include="app\news\news.component.css" />
     <Content Include="app\news\news.component.html" />
+    <Content Include="app\news\news.modal.component.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -181,6 +182,7 @@
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="styles.css" />
+    <Content Include="systemjs.config.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -219,9 +221,11 @@
     <TypeScriptCompile Include="app\main.ts" />
     <TypeScriptCompile Include="app\movies\movies.component.ts" />
     <TypeScriptCompile Include="app\news\news.component.ts" />
+    <TypeScriptCompile Include="app\news\news.modal.component.ts" />
     <TypeScriptCompile Include="app\news\news.service.ts" />
     <TypeScriptCompile Include="app\news\news.ts" />
     <TypeScriptCompile Include="app\shared\groupby.pipe.ts" />
+    <TypeScriptCompile Include="app\shared\safeurl.pipe.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

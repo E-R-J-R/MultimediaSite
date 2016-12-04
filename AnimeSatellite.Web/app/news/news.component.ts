@@ -1,6 +1,9 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { INews } from './news';
 import { NewsService } from './news.service';
+import { NewsModalComponent } from './news.modal.component';
+import { InfiniteScrollModule } from 'angular2-infinite-scroll';
+import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -10,7 +13,7 @@ import { NewsService } from './news.service';
 })
 export class NewsComponent { 
 
-    constructor(private _newsService: NewsService) { }
+    constructor(private _newsService: NewsService, private modalService: NgbModal) { }
 
     newsImageUrl: string;
     errorMessage: string;
@@ -21,6 +24,11 @@ export class NewsComponent {
                          .subscribe(newsItems => this.newsList = newsItems,
                                     error => this.errorMessage = <any>error);
     } 
+
+    openNews(item: INews): void {
+        const modalRef = this.modalService.open(NewsModalComponent, {backdrop: 'static', keyboard: true, size: 'lg'});
+        modalRef.componentInstance.newsItem = item;
+    }
 
     
 

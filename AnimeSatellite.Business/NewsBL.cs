@@ -27,9 +27,12 @@ namespace AnimeSatellite.Business
                                         NewsId = x.NEWSID,
                                         Headline = x.HEADLINE,
                                         Content = x.CONTENT,
+                                        ContentType = x.CONTENTTYPE,
+                                        EmbedCode = x.EMBEDCODE,
                                         NewsDate = x.NEWSDATE,
                                         PublishedDate = x.PUBLISHEDDATE,
-                                        Source = x.SOURCE,
+                                        SourceName = x.SOURCENAME,
+                                        SourceUrl = x.SOURCEURL,
                                         ImageFileName = newsImageUrl + x.IMAGEFILENAME
                                     })
                                     .Skip(skipRows)

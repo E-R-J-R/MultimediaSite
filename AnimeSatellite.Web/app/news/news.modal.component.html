@@ -1,0 +1,30 @@
+﻿
+<div class="modal-header">
+     <h2 class="pull-left">{{newsItem.Headline}}</h2>
+     <a role="button" class="pull-right" (click)="activeModal.close('close')"><i class="remove glyphicon glyphicon-remove-sign glyphicon-white"></i></a> 
+</div>
+<div class="modal-body">
+    <div *ngIf='newsItem.ContentType === "standard"'>
+        <div class="clearfix content-heading">
+            <div [ngClass]="standardStyle">
+                <img [src]='newsItem.ImageFileName'
+                     [title]='newsItem.Headline'
+                     [style.width.px]='450'
+                     [style.height.px]='300'
+                     [style.padding.px]='15'>
+            </div>
+            <div [innerHTML]="newsItem.Content"></div>
+        </div>
+    </div>
+    <div *ngIf='newsItem.ContentType === "custom"'>
+        <div [innerHTML]="newsItem.Content"></div>
+    </div>
+    <div *ngIf='newsItem.ContentType === "youtube"'>
+        <iframe width="854" height="480" [src]="newsItem.SourceUrl | safeUrl" frameborder="0" allowfullscreen></iframe>
+        {{newsItem.Content}}
+    </div>
+</div>
+<div class="modal-footer">
+    <p class="pull-left">Source: <a role="button" class="text-info"  (click)="goToSource()">{{newsItem.SourceName}}</a></p>
+    <button type="button" class="pull-right btn btn-primary" (click)="activeModal.close('close')">Close</button>
+</div>

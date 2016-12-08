@@ -1,7 +1,10 @@
 ﻿
 <div class="modal-header">
-     <h2 class="pull-left">{{newsItem.Headline}}</h2>
-     <a role="button" class="pull-right" (click)="activeModal.close('close')"><i class="remove glyphicon glyphicon-remove-sign glyphicon-white"></i></a> 
+     <p class="pull-left news-link news-headline"><b>{{newsItem.Headline}}</b><br />
+        <span class="news-muted">{{newsItem.NewsDate | date : "MMM d, h:mm a"}}</span><br />
+        <span class="news-muted">Source: <a role="button" class="text-info" (click)="goToSource()">{{newsItem.SourceName}}</a></span>
+    </p>
+    <a role="button" class="pull-right" (click)="activeModal.close('close')"><i class="remove glyphicon glyphicon-remove-sign glyphicon-white"></i></a> 
 </div>
 <div class="modal-body">
     <div *ngIf='newsItem.ContentType === "standard"'>
@@ -25,6 +28,5 @@
     </div>
 </div>
 <div class="modal-footer">
-    <p class="pull-left">Source: <a role="button" class="text-info"  (click)="goToSource()">{{newsItem.SourceName}}</a></p>
     <button type="button" class="pull-right btn btn-primary" (click)="activeModal.close('close')">Close</button>
 </div>

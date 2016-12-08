@@ -6,9 +6,25 @@
 
 .mainbgcolor {
     /**background-color: #222; DARK**/
-    background-color: white; 
+    background-color: #003D7A; 
 }
 
 .subbgcolor {
-    background-color: #e0e1e3;
+    background-color: white;
+    /*background-color: #70b0db;*/
+}
+
+/* NEWS */
+.news-link {
+    font-size:20px;
+    line-height:1.1;
+}
+
+.news-headline {
+    color: #325ab7;
+}
+
+.news-muted {
+    font-size: 11px;
+    color: darkgrey;
 }

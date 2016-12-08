@@ -16,11 +16,12 @@ export class NewsComponent {
     constructor(private _newsService: NewsService, private modalService: NgbModal) { }
 
     newsImageUrl: string;
+    newsCtr: number = 1;
     errorMessage: string;
     newsList: INews[];
 
     ngOnInit(): void {
-        this._newsService.getNewsList(1)
+        this._newsService.getNewsList(this.newsCtr)
                          .subscribe(newsItems => this.newsList = newsItems,
                                     error => this.errorMessage = <any>error);
     } 
@@ -29,6 +30,15 @@ export class NewsComponent {
         const modalRef = this.modalService.open(NewsModalComponent, {backdrop: 'static', keyboard: true, size: 'lg'});
         modalRef.componentInstance.newsItem = item;
     }
+
+    newsLoadMore(): void {
+        this.newsCtr += 1;
+        this._newsService.getNewsList(this.newsCtr)
+                         .subscribe(data => this.newsList = this.newsList.concat(data),
+                                    error => this.errorMessage = <any>error);
+    }
+
+
 
     
 

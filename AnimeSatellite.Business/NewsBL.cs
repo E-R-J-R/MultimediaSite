@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using AnimeSatellite.Contracts;
 using AnimeSatellite.Core.DTO;
@@ -21,7 +22,7 @@ namespace AnimeSatellite.Business
             var skipRows = (page - 1) * pageSize;
 
             var newsList = _ctx.NEWS.AsNoTracking()
-                                    .OrderByDescending(x => x.NEWSDATE)
+                                    .OrderByDescending(x => x.NEWSDATE).ThenBy(x => x.NEWSID)
                                     .Select(x => new NewsDTO
                                     {
                                         NewsId = x.NEWSID,

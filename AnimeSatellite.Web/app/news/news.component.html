@@ -3,24 +3,25 @@
         <div class="col-lg-12">
             <div><b>{{news.key | date : "EEEE,  MMMM dd"}}</b></div>
             <br />
-            <div *ngFor="let item of news.value" class="col-md-4">
-                <div class="thumbnail">
+            <div *ngFor="let item of news.value" class="col-md-4" >
+                <div class="thumbnail" (click)="openNews(item)">
                     <img role="button"
                          [src]='item.ImageFileName'
                          [title]='item.Headline'
                          [style.width.px]='300'
                          [style.height.px]='170'
-                         [style.marign.px]='300'
-                         (click)="openNews(item)">
+                         [style.marign.px]='300'>
                     <div class="caption">
                         <p class="news-link">
-                            <b><a role="button" (click)="openNews(item)">{{item.Headline}}</a></b><br />
+                            <b><a role="button">{{item.Headline}}</a></b><br />
                             <span class="news-muted">{{item.NewsDate | date : "MMM d, h:mm a"}}</span>
                         </p> 
                     </div>
                 </div>
             </div>
+            <br />
         </div>
     </div>
-    <div class="text-center"><input class="btn btn btn-primary" type="button" (click)="newsLoadMore()" value="Load more News"></div>
+    <br />
+    <div class="text-center"><button class="btn btn btn-primary" type="button" (click)="newsLoadMore()"><i class="fa fa-download" aria-hidden="true"></i> Load More News</button></div>
 </div>

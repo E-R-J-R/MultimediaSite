@@ -3,8 +3,11 @@ import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { INews } from './news';
 
 @Component({
+    moduleId: module.id,
     selector: 'news-modal',
-    templateUrl: 'app/news/news.modal.component.html'
+    templateUrl: 'news.modal.component.html',
+    styleUrls: ['news.component.css']
+    //styles: ['.red {color: red;}']
 })
 export class NewsModalComponent {
 

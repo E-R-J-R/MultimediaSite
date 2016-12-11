@@ -8,6 +8,8 @@ import { RouterModule } from '@angular/router';
 import { AppComponent }  from './app.component';
 import { NewsComponent } from './news/news.component';
 import { NewsModalComponent } from './news/news.modal.component';
+import { MoviesComponent } from './movies/movies.component';
+import { MoviesModalComponent } from './movies/movies.modal.component';
 
 //Pipes
 import { GroupByPipe } from './shared/groupby.pipe';
@@ -27,10 +29,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   declarations: [ AppComponent, 
                   NewsComponent,
                   NewsModalComponent,
+                  MoviesComponent,
+                  MoviesModalComponent,
                   GroupByPipe,
                   SafeUrlPipe
                 ],
-  entryComponents: [ NewsModalComponent ],
+  entryComponents: [ NewsModalComponent, MoviesModalComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

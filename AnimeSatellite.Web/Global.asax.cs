@@ -40,7 +40,9 @@ namespace AnimeSatellite.Web
         private void SetApplicationSettings()
         {
             ApplicationSettings.NewsImageUrl = System.Configuration.ConfigurationManager.AppSettings["NewsImageUrl"];
+            ApplicationSettings.MoviesImageUrl = System.Configuration.ConfigurationManager.AppSettings["MoviesImageUrl"];
             ApplicationSettings.NewsPageSize = int.Parse(System.Configuration.ConfigurationManager.AppSettings["NewsPageSize"]);
+            ApplicationSettings.MoviesPageSize = int.Parse(System.Configuration.ConfigurationManager.AppSettings["MoviesPageSize"]);
         }
     }
 }

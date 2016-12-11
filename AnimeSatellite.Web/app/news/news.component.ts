@@ -15,7 +15,6 @@ export class NewsComponent {
 
     constructor(private _newsService: NewsService, private modalService: NgbModal) { }
 
-    newsImageUrl: string;
     newsCtr: number = 1;
     errorMessage: string;
     newsList: INews[];

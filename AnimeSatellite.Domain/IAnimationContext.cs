@@ -12,6 +12,8 @@ namespace AnimeSatellite.Domain
     public interface IAnimationContext : IDisposable
     {
         DbSet<NEWS> NEWS { get; set; }
+        DbSet<MOVIE> MOVIE { get; set; }
+        DbSet<MOVIELINK> MOVIELINK { get; set; }
 
         int SaveChanges();
         DbEntityEntry Entry(object entity);

@@ -1,12 +1,14 @@
 ﻿
 <div class="modal-header">
-     <p class="pull-left news-link news-headline"><b>{{newsItem.Headline}}</b><br />
-        <span class="news-muted">{{newsItem.NewsDate | date : "MMM d, h:mm a"}}</span><br />
-        <span class="news-muted">Source: <a role="button" class="text-info" (click)="goToSource()">{{newsItem.SourceName}}</a></span>
-    </p>
+     <p class="pull-left news-link news-modal-headline"><b>{{newsItem.Headline}}</b><br />
+        <span class="news-muted red">{{newsItem.NewsDate | date : "MMM d, h:mm a"}}</span><br />       
+    </p> 
     <a role="button" class="pull-right" (click)="activeModal.close('close')"><i class="remove glyphicon glyphicon-remove-sign glyphicon-white"></i></a> 
 </div>
 <div class="modal-body">
+    <div class="news-modal-source">
+        <span class="news-muted">Source: <a role="button" class="text-info" (click)="goToSource()">{{newsItem.SourceName}}</a></span>
+    </div><br />
     <div *ngIf='newsItem.ContentType === "standard"'>
         <div class="clearfix content-heading">
             <div [ngClass]="standardStyle">

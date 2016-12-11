@@ -1,4 +1,25 @@
-﻿.dateheader {
-    margin-left: 2%;
-    margin-bottom: 2%;
+﻿/* NEWS */
+.news-link {
+    font-size:20px;
+    line-height:1.1;
+}
+
+.news-headline {
+    color: #325ab7;
+}
+
+.news-modal-headline {
+    color: #325ab7;
+    font-size: 30px;
+    line-height: 0.7;
+}
+
+.news-modal-source {
+    margin-top: -16px;
+    float: right;
+}
+
+.news-muted {
+    font-size: 11px;
+    color: darkgrey;
 }

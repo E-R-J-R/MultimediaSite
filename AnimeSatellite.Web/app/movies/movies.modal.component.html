@@ -1,0 +1,12 @@
+﻿<div class="modal-header">
+    <p class="pull-left">
+        <b>{{movie.Title}}</b><br />
+    </p>
+    <a role="button" class="pull-right" (click)="activeModal.close('close')"><i class="remove glyphicon glyphicon-remove-sign glyphicon-white"></i></a>
+</div>
+<div class="modal-body">
+    <iframe src="http://content.jwplatform.com/players/nPripu9l-ALJ3XQCI.html" width="480" height="294" frameborder="0" scrolling="auto"></iframe>
+</div>
+<div class="modal-footer">
+    <button type="button" class="pull-right btn btn-primary" (click)="activeModal.close('close')">Close</button>
+</div>

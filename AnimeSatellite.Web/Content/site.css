@@ -11,20 +11,37 @@
 
 .subbgcolor {
     background-color: white;
-    /*background-color: #70b0db;*/
 }
 
-/* NEWS */
-.news-link {
-    font-size:20px;
-    line-height:1.1;
+/* COLORS */
+.red {
+    color: red;
 }
 
-.news-headline {
-    color: #325ab7;
+.black {
+    color: black;
 }
 
-.news-muted {
-    font-size: 11px;
-    color: darkgrey;
+.white {
+    color: white;
+}
+
+.yellow {
+    color: yellow;
+}
+
+.green {
+    color: green;
+}
+
+.purple {
+    color: purple;
+}
+
+.blue {
+    color: blue;
+}
+
+.orange {
+    color: orange
 }

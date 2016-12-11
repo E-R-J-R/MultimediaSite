@@ -1,0 +1,14 @@
+﻿[
+  {
+    "outputFile": "Content/Less/variables.css",
+    "inputFile": "Content/Less/variables.less"
+  },
+  {
+    "outputFile": "Content/Less/animated.css",
+    "inputFile": "Content/Less/animated.less"
+  },
+  {
+    "outputFile": "Content/Less/stacked.css",
+    "inputFile": "Content/Less/stacked.less"
+  }
+]

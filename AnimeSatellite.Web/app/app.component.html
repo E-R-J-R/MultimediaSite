@@ -44,22 +44,22 @@
             <div class="li col-xs-2">
                 <div class="list-group">
                     <a class="list-group-item list-group-item-default" (click)="menuSelect('News')" role="button">
-                        News
+                        <i class="fa fa-rss" aria-hidden="true"></i>&nbsp;&nbsp;News
                     </a>
                     <a class="list-group-item list-group-item-default" (click)="menuSelect('Series')" role="button">
-                        Series
+                        <i class="fa fa-television" aria-hidden="true"></i>&nbsp;&nbsp;Series
                     </a>
                     <a class="list-group-item list-group-item-default" (click)="menuSelect('Movies')" role="button">
-                        Movies
+                        <i class="fa fa-video-camera" aria-hidden="true"></i>&nbsp;&nbsp;Movies
                     </a>
                     <a class="list-group-item list-group-item-default">
-                        Manga
+                        <i class="fa fa-book" aria-hidden="true"></i>&nbsp;&nbsp;Manga
                     </a>
                     <a class="list-group-item list-group-item-default">
-                        Games
+                        <i class="fa fa-gamepad" aria-hidden="true"></i>&nbsp;&nbsp;Games
                     </a>
                     <a class="list-group-item list-group-item-default">
-                        Merchandise
+                        <i class="fa fa-tags" aria-hidden="true"></i>&nbsp;&nbsp;Toys
                     </a>
                 </div>
             </div>
@@ -69,7 +69,8 @@
                         <h3 class="panel-title">{{selected}}</h3>
                     </div>
                     <div class="panel-body">
-                        <as-news></as-news>
+                        <as-news *ngIf='selected === "News"'></as-news>
+                        <as-movies *ngIf='selected === "Movies"'></as-movies>
                     </div>
                 </div>
             </div>

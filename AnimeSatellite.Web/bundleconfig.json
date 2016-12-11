@@ -1,0 +1,14 @@
+[
+  {
+    "outputFileName": "Content/font-awesome.min.css",
+    "inputFiles": [
+      "Content/font-awesome.css"
+    ]
+  },
+  {
+    "outputFileName": "Content/bootstrap.min.css",
+    "inputFiles": [
+      "Content/bootstrap.css"
+    ]
+  }
+]

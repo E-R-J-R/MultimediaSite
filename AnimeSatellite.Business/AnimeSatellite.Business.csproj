@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessModule.cs" />
+    <Compile Include="MovieBL.cs" />
     <Compile Include="NewsBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

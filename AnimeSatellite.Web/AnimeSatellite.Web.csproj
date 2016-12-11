@@ -150,15 +150,24 @@
   <ItemGroup>
     <Content Include="app\app.component.html" />
     <Content Include="app\movies\movies.component.html" />
+    <Content Include="app\movies\movies.modal.component.css" />
+    <Content Include="app\movies\movies.modal.component.html" />
     <Content Include="app\news\news.component.css" />
     <Content Include="app\news\news.component.html" />
     <Content Include="app\news\news.modal.component.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.min.css">
+      <DependentUpon>bootstrap.css</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap_dark.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css">
+      <DependentUpon>font-awesome.css</DependentUpon>
+    </Content>
     <Content Include="Content\site.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Images\banner.png" />
@@ -176,6 +185,16 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="app\news\news.json" />
+    <None Include="bundleconfig.json" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -187,6 +206,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiControllers\ConfigurationController.cs" />
+    <Compile Include="ApiControllers\MoviesController.cs" />
     <Compile Include="ApiControllers\NewsController.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
@@ -212,6 +232,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
+    <Folder Include="Images\movies\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -219,7 +240,11 @@
     <TypeScriptCompile Include="app\app.component.ts" />
     <TypeScriptCompile Include="app\app.module.ts" />
     <TypeScriptCompile Include="app\main.ts" />
+    <TypeScriptCompile Include="app\movies\movieLink.ts" />
     <TypeScriptCompile Include="app\movies\movies.component.ts" />
+    <TypeScriptCompile Include="app\movies\movie.ts" />
+    <TypeScriptCompile Include="app\movies\movies.modal.component.ts" />
+    <TypeScriptCompile Include="app\movies\movies.service.ts" />
     <TypeScriptCompile Include="app\news\news.component.ts" />
     <TypeScriptCompile Include="app\news\news.modal.component.ts" />
     <TypeScriptCompile Include="app\news\news.service.ts" />

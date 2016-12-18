@@ -1,11 +1,35 @@
 ﻿<div class="modal-header">
-    <p class="pull-left">
+    <p class="pull-left movie-modal-headline">
         <b>{{movie.Title}}</b><br />
     </p>
-    <a role="button" class="pull-right" (click)="activeModal.close('close')"><i class="remove glyphicon glyphicon-remove-sign glyphicon-white"></i></a>
+    <a role="button" class="pull-right" (click)="activeModal.close('close')"><i class="fa fa-close fa-2x" aria-hidden="true"></i></a>
 </div>
 <div class="modal-body">
-    <iframe src="http://content.jwplatform.com/players/nPripu9l-ALJ3XQCI.html" width="480" height="294" frameborder="0" scrolling="auto"></iframe>
+    <div class="container-fluid">
+        <div class="text-center">
+            <iframe width="740" height="460" [src]="movieLink.LinkUrl | safeUrl" frameborder="0" allowfullscreen></iframe>
+        </div>  
+        <br />
+        <div class="row">
+            <div class="col-md-12">
+                <div class="pull-left">
+                    <img role="button"
+                         [src]='movie.ImageFileName'
+                         [title]='movie.Title'
+                         [style.width.px]='150'
+                         [style.height.px]='200'
+                         [style.padding-right.px]='10'>
+                </div>
+                <div>
+                    <p class="synopsis">
+                        <b>Synopsis</b><br />
+                        {{movie.Synopsis}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 </div>
 <div class="modal-footer">
     <button type="button" class="pull-right btn btn-primary" (click)="activeModal.close('close')">Close</button>

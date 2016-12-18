@@ -10,3 +10,13 @@
   min-height: 100%;
   border-radius: 0;
 }*/
+
+.synopsis {
+    font-size: small
+}
+
+.movie-modal-headline {
+    color: #325ab7;
+    font-size: 22px;
+    line-height: 1;
+}

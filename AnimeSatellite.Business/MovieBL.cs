@@ -41,7 +41,7 @@ namespace AnimeSatellite.Business
                                                     AutoPlay = y.AUTOPLAY,
                                                     FullScreen = y.FULLSCREEN,
                                                     EmbedCode = y.EMBEDCODE
-                                                }).ToList()
+                                                }).OrderBy(y => y.MovieLinkId).ToList()
                                  })
                                  .Skip(skipRows)
                                  .Take(pageSize)

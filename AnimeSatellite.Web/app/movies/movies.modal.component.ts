@@ -15,14 +15,25 @@ export class MoviesModalComponent {
     @Input() movie: IMovie;
     
     movieLink: IMovieLink;
+    altLinks: IMovieLink[];
     
-
     constructor(public activeModal: NgbActiveModal) {}
 
     ngOnInit(): void {
         this.movieLink = _.first(this.movie.Links);
+
+        if (this.movie.Links.length > 0)
+        {
+            this.altLinks = this.movie.Links;
+        }        
     } 
 
+    getAltVideo(link: IMovieLink): void {
+        this.movieLink = link;
+        
+    }
+
+    
 
 
 }

@@ -5,27 +5,38 @@
     <a role="button" class="pull-right" (click)="activeModal.close('close')"><i class="fa fa-close fa-2x" aria-hidden="true"></i></a>
 </div>
 <div class="modal-body">
-    <div class="container-fluid">
+    <div>
         <div class="text-center">
             <iframe width="740" height="460" [src]="movieLink.LinkUrl | safeUrl" frameborder="0" allowfullscreen></iframe>
         </div>  
-        <br />
-        <div class="row">
-            <div class="col-md-12">
-                <div class="pull-left">
+        <div class="text-center">
+            <div class="container-fluid">
+                <p><small>Link not working? Try the following alternative links: </small><a *ngFor="let link of altLinks" (click)="getAltVideo(link)">{{link.LinkType}}&nbsp;</a></p>
+            </div>
+        </div>
+        <div>
+            <div class="col-lg-offset-1">
+                <!--<div class="pull-left">
                     <img role="button"
                          [src]='movie.ImageFileName'
                          [title]='movie.Title'
                          [style.width.px]='150'
                          [style.height.px]='200'
                          [style.padding-right.px]='10'>
+                </div>-->
+                <div class="row">
+                    <div class="col-md-11">
+                        <div>
+                            <p class="synopsis">
+                                <b>Synopsis</b><br /><br />
+                                <sup><i class="fa fa-quote-left" aria-hidden="true"></i></sup>
+                                {{movie.Synopsis}}
+                                <sup><i class="fa fa-quote-right" aria-hidden="true"></i></sup>
+                            </p>  
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <p class="synopsis">
-                        <b>Synopsis</b><br />
-                        {{movie.Synopsis}}
-                    </p>
-                </div>
+               
             </div>
         </div>
     </div>

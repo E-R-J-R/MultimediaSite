@@ -18,7 +18,7 @@ export class AppComponent {
     }
     
      ngOnInit(): void {
-        this.selected = "News";
+        this.selected = "Movies";
                              
     }
 }

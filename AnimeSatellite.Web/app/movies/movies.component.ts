@@ -31,7 +31,7 @@ export class MoviesComponent {
      }
 
      openMovie(item: IMovie): void {
-        const modalRef = this.modalService.open(MoviesModalComponent, {backdrop: 'static', keyboard: true, size: 'lg'});
+        const modalRef = this.modalService.open(MoviesModalComponent, {backdrop: 'static', keyboard: true, windowClass: 'movie-modal'});
         modalRef.componentInstance.movie = item;
      }
 } 

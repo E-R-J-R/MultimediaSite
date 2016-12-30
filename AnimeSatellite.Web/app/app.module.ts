@@ -14,6 +14,7 @@ import { MoviesModalComponent } from './movies/movies.modal.component';
 //Pipes
 import { GroupByPipe } from './shared/groupby.pipe';
 import { SafeUrlPipe } from './shared/safeurl.pipe';
+import { TruncatePipe } from './shared/truncate.pipe';
 
 //Libraries
 import { InfiniteScrollModule } from 'angular2-infinite-scroll';
@@ -32,9 +33,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
                   MoviesComponent,
                   MoviesModalComponent,
                   GroupByPipe,
-                  SafeUrlPipe
+                  SafeUrlPipe,
+                  TruncatePipe
                 ],
-  entryComponents: [ NewsModalComponent, MoviesModalComponent ],
+  entryComponents: [ NewsComponent, NewsModalComponent, MoviesModalComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

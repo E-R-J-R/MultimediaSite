@@ -250,6 +250,7 @@
     <TypeScriptCompile Include="app\news\news.service.ts" />
     <TypeScriptCompile Include="app\news\news.ts" />
     <TypeScriptCompile Include="app\shared\groupby.pipe.ts" />
+    <TypeScriptCompile Include="app\shared\truncate.pipe.ts" />
     <TypeScriptCompile Include="app\shared\safeurl.pipe.ts" />
   </ItemGroup>
   <ItemGroup>

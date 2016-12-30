@@ -2,16 +2,16 @@
     <p class="pull-left movie-modal-headline">
         <b>{{movie.Title}}</b><br />
     </p>
-    <a role="button" class="pull-right" (click)="activeModal.close('close')"><i class="fa fa-close fa-2x" aria-hidden="true"></i></a>
+    <button type="button" class="close" (click)="activeModal.close('close')" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 </div>
 <div class="modal-body">
     <div>
         <div class="text-center">
-            <iframe width="740" height="460" [src]="movieLink.LinkUrl | safeUrl" frameborder="0" allowfullscreen></iframe>
+            <iframe width="940" height="520" [src]="movieLink.LinkUrl | safeUrl" frameborder="0" allowfullscreen></iframe>
         </div>  
         <div class="text-center">
             <div class="container-fluid">
-                <p><small>Link not working? Try the following alternative links: </small><a *ngFor="let link of altLinks" (click)="getAltVideo(link)">{{link.LinkType}}&nbsp;</a></p>
+                <p><small>Video not working? Try the following alternative links: </small><a *ngFor="let link of altLinks" style="text-decoration:none !important;" role="button" (click)="getAltVideo(link)">{{link.LinkType}}&nbsp;</a></p>
             </div>
         </div>
         <div>

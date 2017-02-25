@@ -22,6 +22,9 @@ namespace AnimeSatellite.Domain
         public virtual DbSet<NEWS> NEWS { get; set; }
         public virtual DbSet<MOVIE> MOVIE { get; set; }
         public virtual DbSet<MOVIELINK> MOVIELINK { get; set; }
+        public virtual DbSet<TAG> TAG { get; set; }
+        public virtual DbSet<TAGMAP> TAGMAP { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

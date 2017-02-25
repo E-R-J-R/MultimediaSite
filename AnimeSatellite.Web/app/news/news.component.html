@@ -14,6 +14,13 @@
                     <div class="caption">
                         <p class="news-link">
                             <b><a role="button">{{item.Headline}}</a></b><br />
+                            <span *ngFor="let tag of item.Tags">
+                                <button  type="button" class="btn btn-xs btn-success">
+                                    {{tag}}
+                                    <span class="badge"></span>
+                                </button>
+                            </span>
+                            <br />
                             <span class="news-muted">{{item.NewsDate | date : "MMM d, h:mm a"}}</span>
                             <!--<br />{{item?.Content | limitTo: 50}}-->
                         </p> 

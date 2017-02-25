@@ -28,6 +28,10 @@ export class MoviesModalComponent {
         }        
     } 
 
+    getVideo(): string {
+        return this.movieLink.LinkUrl;
+    }
+
     getAltVideo(link: IMovieLink): void {
         this.movieLink = link;
         

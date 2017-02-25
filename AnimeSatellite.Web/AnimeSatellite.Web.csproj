@@ -148,6 +148,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\anime\anime.component.html" />
     <Content Include="app\app.component.html" />
     <Content Include="app\movies\movies.component.html" />
     <Content Include="app\movies\movies.modal.component.css" />
@@ -236,6 +237,8 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="app\anime\anime.component.ts" />
+    <TypeScriptCompile Include="app\anime\anime.service.ts" />
     <TypeScriptCompile Include="app\app.component.spec.ts" />
     <TypeScriptCompile Include="app\app.component.ts" />
     <TypeScriptCompile Include="app\app.module.ts" />

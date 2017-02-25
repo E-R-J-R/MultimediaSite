@@ -14,6 +14,8 @@ namespace AnimeSatellite.Domain
         DbSet<NEWS> NEWS { get; set; }
         DbSet<MOVIE> MOVIE { get; set; }
         DbSet<MOVIELINK> MOVIELINK { get; set; }
+        DbSet<TAG> TAG { get; set; }
+        DbSet<TAGMAP> TAGMAP { get; set; }
 
         int SaveChanges();
         DbEntityEntry Entry(object entity);

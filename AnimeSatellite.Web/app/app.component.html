@@ -10,18 +10,21 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">
+                <!--<a class="navbar-brand" href="#">
                     <img src="http://placehold.it/150x50&text=Logo" alt="">
-                </a>
+                </a>-->
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">About</a>
+                        <a (click)="menuSelect('News')" role="button">News</a>
                     </li>
                     <li>
-                        <a href="#">Services</a>
+                        <a href="#">Anime</a>
+                    </li>
+                    <li>
+                        <a (click)="menuSelect('Movies')" role="button">Movies</a>
                     </li>
                     <li>
                         <a href="#">Contact</a>
@@ -41,7 +44,7 @@
     <div class="container-fluid">
         <div class="row subbgcolor">
             <br />
-            <div class="li col-xs-2">
+            <!--<div class="li col-xs-2">
                 <div class="list-group">
                     <a class="list-group-item list-group-item-default" (click)="menuSelect('News')" role="button">
                         <i class="fa fa-rss" aria-hidden="true"></i>&nbsp;&nbsp;News
@@ -62,8 +65,8 @@
                         <i class="fa fa-tags" aria-hidden="true"></i>&nbsp;&nbsp;Toys
                     </a>
                 </div>
-            </div>
-            <div class="col-xs-10">
+            </div>-->
+            <div class="col-xs-12">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
                         <h3 class="panel-title">{{selected}}</h3>

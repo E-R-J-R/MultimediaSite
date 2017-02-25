@@ -9,4 +9,5 @@
     SourceName: string;
     SourceUrl: string;
     ImageFileName: string; 
+    Tags: string[];
 }

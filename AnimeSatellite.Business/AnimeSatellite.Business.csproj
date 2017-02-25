@@ -57,6 +57,7 @@
     <Compile Include="MovieBL.cs" />
     <Compile Include="NewsBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TagBL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AnimeSatellite.Contracts\AnimeSatellite.Contracts.csproj">

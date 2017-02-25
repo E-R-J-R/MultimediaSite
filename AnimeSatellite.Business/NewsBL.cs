@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using AnimeSatellite.Contracts;
 using AnimeSatellite.Core.DTO;
@@ -11,10 +10,12 @@ namespace AnimeSatellite.Business
     {
 
         private readonly IAnimationContext _ctx;
+        private readonly ITagBL _tagBL;
 
-        public NewsBL(IAnimationContext ctx)
+        public NewsBL(IAnimationContext ctx, ITagBL tagBL)
         {
             _ctx = ctx;
+            _tagBL = tagBL;
         }
 
         public List<NewsDTO> GetNewsList(int page, int pageSize, string newsImageUrl)
@@ -34,7 +35,15 @@ namespace AnimeSatellite.Business
                                         PublishedDate = x.PUBLISHEDDATE,
                                         SourceName = x.SOURCENAME,
                                         SourceUrl = x.SOURCEURL,
-                                        ImageFileName = newsImageUrl + x.IMAGEFILENAME
+                                        ImageFileName = newsImageUrl + x.IMAGEFILENAME,
+                                        Tags = _ctx.TAGMAP
+                                                   .Join(_ctx.TAG,
+                                                         map => map.TAGID,
+                                                         tag => tag.TAGID,
+                                                         (map, tag) => new { TagMap = map, Tag = tag })
+                                                    .Where(y => y.TagMap.TAGCONTENTID == x.NEWSID && y.TagMap.TAGCONTENTTYPE == "news")
+                                                    .Select(y => y.Tag.TAGNAME)
+                                                    .ToList()
                                     })
                                     .Skip(skipRows)
                                     .Take(pageSize)

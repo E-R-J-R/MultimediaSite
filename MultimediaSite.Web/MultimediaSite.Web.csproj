@@ -171,9 +171,7 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Images\banner.png" />
-    <Content Include="Images\banner_alpha.png" />
-    <Content Include="Images\banner_beta.png" />
+    <Content Include="Images\news-banner.jpg" />
     <Content Include="Images\news\dragonballsuper.jpg" />
     <Content Include="Images\news\gotenks.jpg" />
     <Content Include="index.html" />

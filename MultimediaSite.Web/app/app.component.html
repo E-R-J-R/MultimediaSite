@@ -21,10 +21,7 @@
                         <a (click)="menuSelect('News')" role="button">News</a>
                     </li>
                     <li>
-                        <a href="#">Anime</a>
-                    </li>
-                    <li>
-                        <a (click)="menuSelect('Movies')" role="button">Movies</a>
+                        <a (click)="menuSelect('Documentary')" role="button">Documentary</a>
                     </li>
                     <li>
                         <a href="#">Contact</a>
@@ -38,7 +35,7 @@
 </header>
 <!-- Banner -->
 <div class="mainbgcolor maincontent">
-    <img src="/Images/banner_alpha.png" class="maincontent" />
+    <img src="/Images/news-banner.jpg" class="maincontent" />
 </div>
 <div class="maincontent">
     <div class="container-fluid">
@@ -73,7 +70,7 @@
                     </div>
                     <div class="panel-body">
                         <as-news *ngIf='selected === "News"'></as-news>
-                        <as-movies *ngIf='selected === "Movies"'></as-movies>
+                        <as-movies *ngIf='selected === "Documentary"'></as-movies>
                     </div>
                 </div>
             </div>

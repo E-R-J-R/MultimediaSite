@@ -1,5 +1,5 @@
 ﻿import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Response, RequestOptions, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { INews } from './news';
 import { URLSearchParams } from '@angular/http';
@@ -12,6 +12,7 @@ export class NewsService {
 
     private _getConfigUrl = 'api/configuration/getconfig';
     private _getNewsListUrl = 'api/news/getnews';
+    private _insertNewsUrl = 'api/news/insertnews?newsList=';
 
     constructor(private _http: Http) {}
 
@@ -32,6 +33,19 @@ export class NewsService {
                          .do(data => console.log('All: ' + JSON.stringify(data)))
                          .catch(this.handleError);
         
+    }
+
+    insertNews(newsList: INews[]) : Observable<number>  {
+        
+        let postHeaders: Headers = new Headers();
+        postHeaders.append('Content-Type', 'application/json');  
+        let options = new RequestOptions({ headers: postHeaders }); 
+
+        return this._http.post(this._insertNewsUrl, JSON.stringify(newsList),  options)
+                         .map((response: Response) => <number> parseInt(JSON.stringify(response)))
+                         .do(data => console.log(JSON.stringify(data)))
+                         .catch(this.handleError); 
+
     }
 
     private handleError(error: Response) {

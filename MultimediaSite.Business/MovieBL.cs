@@ -8,9 +8,9 @@ namespace MultimediaSite.Business
 {
     public class MovieBL : IMovieBL
     {
-        private readonly IAnimationContext _ctx;
+        private readonly IMultimediaContext _ctx;
 
-        public MovieBL(IAnimationContext ctx)
+        public MovieBL(IMultimediaContext ctx)
         {
             _ctx = ctx;
         }

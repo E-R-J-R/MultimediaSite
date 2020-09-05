@@ -1,8 +1,9 @@
 //Angular
-import { NgModule }      from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 //Components
 import { AppComponent }  from './app.component';
@@ -10,6 +11,13 @@ import { NewsComponent } from './news/news.component';
 import { NewsModalComponent } from './news/news.modal.component';
 import { MoviesComponent } from './movies/movies.component';
 import { MoviesModalComponent } from './movies/movies.modal.component';
+import { AdminComponent } from './admin/admin.component';
+import { NewsInsertModalComponent } from './admin/news.insert.modal.component'
+
+//Services
+import { NewsService } from './news/news.service';
+import { MoviesService } from './movies/movies.service';
+import { AdminService } from './admin/admin.service';
 
 //Pipes
 import { GroupByPipe } from './shared/groupby.pipe';
@@ -24,6 +32,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   imports:      [ BrowserModule, 
                   HttpModule, 
                   RouterModule, 
+                  FormsModule,
                   InfiniteScrollModule,
                   NgbModule.forRoot()
                 ],
@@ -34,9 +43,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
                   MoviesModalComponent,
                   GroupByPipe,
                   SafeUrlPipe,
-                  TruncatePipe
+                  TruncatePipe,
+                  AdminComponent,
+                  NewsInsertModalComponent
                 ],
-  entryComponents: [ NewsComponent, NewsModalComponent, MoviesModalComponent ],
+  providers: [ NewsService,
+               MoviesService,
+               AdminService
+             ],
+  entryComponents: [ NewsComponent, NewsModalComponent, MoviesModalComponent, AdminComponent, NewsInsertModalComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

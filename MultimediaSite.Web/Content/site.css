@@ -13,6 +13,12 @@
     background-color: white;
 }
 
+/* PANEL */
+.panel-dark > .panel-heading {
+    color: ghostwhite;
+    background: #222;
+    border-color: #ddd;
+ }
 
 /* MODAL */
 .movie-modal .modal-dialog {

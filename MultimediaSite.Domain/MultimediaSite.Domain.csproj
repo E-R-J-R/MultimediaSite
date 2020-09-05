@@ -53,14 +53,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnimationContext.cs" />
+    <Compile Include="MultimediaContext.cs" />
     <Compile Include="DomainModule.cs" />
     <Compile Include="Entities\MOVIE.cs" />
     <Compile Include="Entities\MOVIELINK.cs" />
     <Compile Include="Entities\NEWS.cs" />
     <Compile Include="Entities\TAG.cs" />
     <Compile Include="Entities\TAGMAP.cs" />
-    <Compile Include="IAnimationContext.cs" />
+    <Compile Include="IMultimediaContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

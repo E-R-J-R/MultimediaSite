@@ -7,16 +7,16 @@ using MultimediaSite.Domain.Entities;
 
 namespace MultimediaSite.Domain
 {
-    public class AnimationContext : DbContext, IAnimationContext
+    public class MultimediaContext : DbContext, IMultimediaContext
     {
-        public AnimationContext() : base ("name=AnimationContext")
+        public MultimediaContext() : base ("name=MultimediaContext")
         {
 
         }
 
-        static AnimationContext()
+        static MultimediaContext()
         {
-            Database.SetInitializer<AnimationContext>(null);
+            Database.SetInitializer<MultimediaContext>(null);
         }
 
         public virtual DbSet<NEWS> NEWS { get; set; }

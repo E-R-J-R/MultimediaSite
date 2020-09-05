@@ -2,14 +2,11 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MultimediaSite.Domain.Entities;
 
 namespace MultimediaSite.Domain
 {
-    public interface IAnimationContext : IDisposable
+    public interface IMultimediaContext : IDisposable
     {
         DbSet<NEWS> NEWS { get; set; }
         DbSet<MOVIE> MOVIE { get; set; }

@@ -7,9 +7,9 @@ namespace MultimediaSite.Business
 {
     public class TagBL : ITagBL
     {
-        private readonly IAnimationContext _ctx;
+        private readonly IMultimediaContext _ctx;
 
-        public TagBL (IAnimationContext ctx)
+        public TagBL (IMultimediaContext ctx)
         {
             _ctx = ctx;
         }

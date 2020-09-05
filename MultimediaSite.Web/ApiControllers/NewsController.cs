@@ -22,5 +22,23 @@ namespace MultimediaSite.Web.ApiControllers
             return _newsBL.GetNewsList(page, ApplicationSettings.NewsPageSize, ApplicationSettings.NewsImageUrl);
         }
 
+        [HttpPost]
+        public int InsertNews([FromBody]List<NewsDTO> newsList)
+        {
+            return _newsBL.InsertNews(newsList);
+        }
+
+        [HttpPost]
+        public int DeleteNews(List<int> newsIdList)
+        {
+            return _newsBL.DeleteNews(newsIdList);
+        }
+
+        [HttpPost]
+        public int UpdateNews(NewsDTO newsItem)
+        {
+            return _newsBL.UpdateNews(newsItem);
+        }
+
     }
 }

@@ -1,0 +1,79 @@
+﻿<div class="modal-header">
+    <p class="pull-left movie-modal-headline">
+        <b>Insert News</b><br />
+    </p>
+    <button type="button" class="close" (click)="activeModal.close('close')" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+</div>
+<div class="modal-body">
+    <div>
+        <div class="input-group">
+            <span class="input-group-addon" id="inputHeadline">Headline</span>
+            <input type="text" class="form-control" placeholder="Headline" aria-describedby="inputHeadline" [(ngModel)]="newsItem.Headline">
+        </div>
+        <br />
+        <div class="input-group">
+            <span class="input-group-addon" id="inputContent">Content</span>
+            <textarea class="form-control" rows="5" placeholder="HTML Formatted Text" aria-describedby="inputContent" [(ngModel)]="newsItem.Content"></textarea>
+        </div>
+        <br />
+        <div class="row">           
+            <div class="col-lg-3">
+                <label>Content Type</label>
+                <select (change)="selectContentTypeChange($event)">
+                    <option value="article" [selected]="true">Article</option>
+                    <option value="custom" [selected]="false">Custom</option>
+                    <option value="video" [selected]="false">Video</option>
+                </select>
+            </div>
+            <div class="col-lg-4">
+                <label>News Date</label>
+                <input type="date" [(ngModel)]="newsItem.NewsDate" />
+            </div>
+            <div class="col-lg-4">
+                <label>Publish Date</label>
+                <input type="date" [(ngModel)]="newsItem.PublishedDate" />
+            </div>
+        </div>
+        <br />
+        <div class="input-group">
+            <span class="input-group-addon" id="inputEmbedCode">Video Embed Code</span>
+            <input type="text" class="form-control" placeholder="Video Embed Code" aria-describedby="inputEmbedCode" [(ngModel)]="newsItem.EmbedCode" >
+        </div>
+        <br />     
+        <div class="input-group">
+            <span class="input-group-addon" id="inputSourceName">Source Name</span>
+            <input type="text" class="form-control" placeholder="Source Name" aria-describedby="inputSourceName" [(ngModel)]="newsItem.SourceName" >
+        </div>
+        <br /> 
+        <div class="input-group">
+            <span class="input-group-addon" id="inputSourceUrl">Source Url</span>
+            <input type="text" class="form-control" placeholder="Source Url" aria-describedby="inputSourceUrl" [(ngModel)]="newsItem.SourceUrl" >
+        </div>
+        <br />
+        <div class="input-group">
+            <span class="input-group-addon" id="inputImageUrl">Image Url</span>
+            <input type="text" class="form-control" placeholder="The url of the image uploaded to the File Server" aria-describedby="inputImageUrl" [(ngModel)]="newsItem.ImageFileName" >
+        </div>
+        <br /> 
+        <div>
+            <label>Tags</label>
+            <p>Select applicable tags below:</p>
+            <div class="btn-group" role="group" aria-label="Tags">
+                <button type="button" class="btn btn-success btn-xs" style="margin-right:5px">World</button>
+                <button type="button" class="btn btn-success btn-xs" style="margin-right:5px">Science</button>
+                <button type="button" class="btn btn-success btn-xs" style="margin-right:5px">Politics</button>
+            </div>
+        </div>
+        <br />
+        <div class="input-group">
+            <span class="input-group-addon" id="inputTags">Selected Tags</span>
+            <input type="text" class="form-control" readonly placeholder="Selected Tags" aria-describedby="inputTags" [(ngModel)]="newsItem.Headline">
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <p>
+        <a class="btn btn-primary btn-sm" role="button" (click)="submit()">Submit</a>
+        <a class="btn btn-danger btn-sm" role="button" (click)="activeModal.close('close')">Close</a>
+    </p>
+</div>

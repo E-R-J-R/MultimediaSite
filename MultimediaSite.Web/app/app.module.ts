@@ -13,11 +13,13 @@ import { MoviesComponent } from './movies/movies.component';
 import { MoviesModalComponent } from './movies/movies.modal.component';
 import { AdminComponent } from './admin/admin.component';
 import { NewsInsertModalComponent } from './admin/news.insert.modal.component'
+import { ConfirmModalComponent } from './shared/confirm.modal.component'
 
 //Services
 import { NewsService } from './news/news.service';
 import { MoviesService } from './movies/movies.service';
 import { AdminService } from './admin/admin.service';
+import { TagService } from './shared/tag.service';
 
 //Pipes
 import { GroupByPipe } from './shared/groupby.pipe';
@@ -45,13 +47,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
                   SafeUrlPipe,
                   TruncatePipe,
                   AdminComponent,
-                  NewsInsertModalComponent
+                  NewsInsertModalComponent,
+                  ConfirmModalComponent
                 ],
   providers: [ NewsService,
                MoviesService,
-               AdminService
+               AdminService,
+               TagService
              ],
-  entryComponents: [ NewsComponent, NewsModalComponent, MoviesModalComponent, AdminComponent, NewsInsertModalComponent ],
+  entryComponents: [ NewsComponent, NewsModalComponent, MoviesModalComponent, AdminComponent, NewsInsertModalComponent, ConfirmModalComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

@@ -156,6 +156,7 @@
     <Content Include="app\news\news.component.css" />
     <Content Include="app\news\news.component.html" />
     <Content Include="app\news\news.modal.component.html" />
+    <Content Include="app\shared\confirm.modal.component.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -289,6 +290,7 @@
     <Compile Include="ApiControllers\ConfigurationController.cs" />
     <Compile Include="ApiControllers\MoviesController.cs" />
     <Compile Include="ApiControllers\NewsController.cs" />
+    <Compile Include="ApiControllers\TagController.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Global.asax.cs">
@@ -344,7 +346,10 @@
     <TypeScriptCompile Include="app\news\news.modal.component.ts" />
     <TypeScriptCompile Include="app\news\news.service.ts" />
     <TypeScriptCompile Include="app\news\news.ts" />
+    <TypeScriptCompile Include="app\shared\confirm.modal.component.ts" />
     <TypeScriptCompile Include="app\shared\groupby.pipe.ts" />
+    <TypeScriptCompile Include="app\shared\tag.service.ts" />
+    <TypeScriptCompile Include="app\shared\tag.ts" />
     <TypeScriptCompile Include="app\shared\truncate.pipe.ts" />
     <TypeScriptCompile Include="app\shared\safeurl.pipe.ts" />
     <TypeScriptCompile Include="Scripts\index.d.ts" />

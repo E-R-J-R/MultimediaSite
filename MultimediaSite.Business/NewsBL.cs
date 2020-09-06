@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using MultimediaSite.Contracts;
 using MultimediaSite.Core.DTO;
@@ -43,7 +44,7 @@ namespace MultimediaSite.Business
                                                          tag => tag.TAGID,
                                                          (map, tag) => new { TagMap = map, Tag = tag })
                                                     .Where(y => y.TagMap.TAGCONTENTID == x.NEWSID && y.TagMap.TAGCONTENTTYPE == "news")
-                                                    .Select(y => y.Tag.TAGNAME)
+                                                    .Select(y => new TagDTO { TagId = y.Tag.TAGID, TagName = y.Tag.TAGNAME })
                                                     .ToList()
                                     })
                                     .Skip(skipRows)
@@ -66,21 +67,38 @@ namespace MultimediaSite.Business
                 newsItem.PUBLISHEDDATE = n.PublishedDate;
                 newsItem.SOURCENAME = n.SourceName;
                 newsItem.SOURCEURL = n.SourceUrl;
+                newsItem.IMAGEFILENAME = n.ImageFileName;
 
                 _ctx.NEWS.Add(newsItem);
+                _ctx.SaveChanges();
+
+                var newsId = newsItem.NEWSID;
+
+                //Fill tags for the news content
+                foreach (var t in n.Tags)
+                {
+                    var tagMap = new TAGMAP();
+                    tagMap.TAGCONTENTID = newsId;
+                    tagMap.TAGCONTENTTYPE = "news";
+                    tagMap.TAGID = t.TagId;
+                    _ctx.TAGMAP.Add(tagMap);
+                }
+
+                _ctx.SaveChanges();
             }
 
-            return _ctx.SaveChanges();
+            return 1;
         }
 
-        public int DeleteNews(List<int> newsIdList)
+        public int DeleteNews(int newsId)
         {
-            foreach(var id in newsIdList)
-            {
-                var entity = new NEWS { NEWSID = id };
-                _ctx.NEWS.Attach(entity);
-                _ctx.NEWS.Remove(entity);
-            }
+            var entity = new NEWS { NEWSID = newsId };
+            _ctx.NEWS.Attach(entity);
+            _ctx.NEWS.Remove(entity);
+
+            //Delete existing tags
+            var tagMapList = _ctx.TAGMAP.Where(y => y.TAGCONTENTID == newsId).ToList();
+            _ctx.TAGMAP.RemoveRange(tagMapList);
 
             return _ctx.SaveChanges();
         }
@@ -96,8 +114,25 @@ namespace MultimediaSite.Business
             newsItem.PUBLISHEDDATE = newsUpdate.PublishedDate;
             newsItem.SOURCENAME = newsUpdate.SourceName;
             newsItem.SOURCEURL = newsUpdate.SourceUrl;
+            newsItem.IMAGEFILENAME = Path.GetFileName(newsUpdate.ImageFileName);
+            _ctx.NEWS.Attach(newsItem);
 
-            return _ctx.SaveChanges();
+            //Delete existing tags
+            var tagMapList = _ctx.TAGMAP.Where(y => y.TAGCONTENTID == newsItem.NEWSID).ToList();
+            _ctx.TAGMAP.RemoveRange(tagMapList);
+
+            //Fill tags for the news content
+            foreach (var t in newsUpdate.Tags)
+            {
+                var tagMap = new TAGMAP();
+                tagMap.TAGCONTENTID = newsItem.NEWSID;
+                tagMap.TAGCONTENTTYPE = "news";
+                tagMap.TAGID = t.TagId;
+                _ctx.TAGMAP.Add(tagMap);
+                
+            }
+
+            return _ctx.SaveChanges(); ;
         }
     }
 }

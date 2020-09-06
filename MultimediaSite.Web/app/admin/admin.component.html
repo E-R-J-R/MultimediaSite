@@ -1,20 +1,43 @@
 ﻿<div class="container-fluid">
     <div class="jumbotron">
         <h2><strong>News</strong></h2>
-        <p>Administration Section for News Page that provides ability to Add, Edit or Delete news item(s) in the site.</p>
+        <p><small>Section for News Page that provides ability to Upload, Update or Delete news item(s) in the site.</small></p>
         <p>
-            <a class="btn btn-primary btn-sm" role="button" (click)="insertNews()">Insert</a>
-            <a class="btn btn-primary btn-sm" role="button">Update</a>
-            <a class="btn btn-danger btn-sm" role="button">Delete</a>
+            <a class="btn btn-primary btn-sm" role="button" (click)="insertNews()"><span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span> Upload</a>
+            <a class="btn btn-primary btn-sm" role="button" (click)="review()"><span class="glyphicon glyphicon-check" aria-hidden="true"></span> Review</a>
         </p>
+        <div class="panel panel-default" *ngIf="showReview">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-6 col-md-4" *ngFor="let news of newsList">
+                        <div class="thumbnail">
+                            <img role="button"
+                                 [src]='news.ImageFileName'
+                                 [title]='news.Headline'
+                                 [style.width.px]='300'
+                                 [style.height.px]='170'
+                                 [style.marign.px]='300'>
+                            <div class="caption">
+                                <p><strong>{{news.Headline}}</strong></p>
+                                <p><small>{{news.Content | limitTo: 100}}</small></p>
+                                <p>
+                                    <a class="btn btn-primary" role="button" (click)="updateNews(news.NewsId)"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Update</a>
+                                    <a class="btn btn-danger" role="button" (click)="deleteNews(news.NewsId)"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span> Delete</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center"><i class="fa fa-angle-down fa-5x" aria-hidden="true" type="button" (click)="newsLoadMore()"></i> </div>
+            </div>
+        </div>
     </div>
     <div class="jumbotron">
         <h2><strong>Documentary</strong></h2>
-        <p>Administration Section for Documentary Page that provides ability to Add, Edit or Delete documentaries in the site.</p>
+        <p>Administration Section for Documentary Page that provides ability to Upload, Update or Delete documentaries in the site.</p>
         <p>
-            <a class="btn btn-primary btn-sm" href="#" role="button">Insert</a>
-            <a class="btn btn-primary btn-sm" href="#" role="button">Update</a>
-            <a class="btn btn-danger btn-sm" href="#" role="button">Delete</a>
+            <a class="btn btn-primary btn-sm" role="button" (click)="insertDocumentary()"><span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span> Upload</a>
+            <a class="btn btn-primary btn-sm" role="button"><span class="glyphicon glyphicon-check" aria-hidden="true"></span> Review</a>
         </p>
     </div>
 </div>

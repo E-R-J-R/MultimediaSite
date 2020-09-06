@@ -1,4 +1,6 @@
-﻿export interface INews {
+﻿import { ITag } from '../shared/tag';
+
+export interface INews {
     NewsId: number;
     Headline: string;
     Content: string;
@@ -9,5 +11,5 @@
     SourceName: string;
     SourceUrl: string;
     ImageFileName: string; 
-    Tags: string[];
+    Tags: ITag[];
 }

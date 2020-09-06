@@ -13,6 +13,8 @@ export class NewsService {
     private _getConfigUrl = 'api/configuration/getconfig';
     private _getNewsListUrl = 'api/news/getnews';
     private _insertNewsUrl = 'api/news/insertnews?newsList=';
+    private _updateNewsUrl = 'api/news/updatenews?newsItem=';
+    private _deleteNewsUrl = 'api/news/deletenews?newsId=';
 
     constructor(private _http: Http) {}
 
@@ -42,6 +44,32 @@ export class NewsService {
         let options = new RequestOptions({ headers: postHeaders }); 
 
         return this._http.post(this._insertNewsUrl, JSON.stringify(newsList),  options)
+                         .map((response: Response) => <number> parseInt(JSON.stringify(response)))
+                         .do(data => console.log(JSON.stringify(data)))
+                         .catch(this.handleError); 
+
+    }
+
+    updateNews(newsItem: INews) : Observable<number>  {
+        
+        let postHeaders: Headers = new Headers();
+        postHeaders.append('Content-Type', 'application/json');  
+        let options = new RequestOptions({ headers: postHeaders }); 
+
+        return this._http.post(this._updateNewsUrl, JSON.stringify(newsItem),  options)
+                         .map((response: Response) => <number> parseInt(JSON.stringify(response)))
+                         .do(data => console.log(JSON.stringify(data)))
+                         .catch(this.handleError); 
+
+    }
+
+    deleteNews(newsId: number) : Observable<number>  {
+        
+        let postHeaders: Headers = new Headers();
+        postHeaders.append('Content-Type', 'application/json');  
+        let options = new RequestOptions({ headers: postHeaders }); 
+
+        return this._http.post(this._deleteNewsUrl + newsId.toString(), options)
                          .map((response: Response) => <number> parseInt(JSON.stringify(response)))
                          .do(data => console.log(JSON.stringify(data)))
                          .catch(this.handleError); 

@@ -2,6 +2,7 @@
 using System.Linq;
 using MultimediaSite.Contracts;
 using MultimediaSite.Domain;
+using MultimediaSite.Core.DTO;
 
 namespace MultimediaSite.Business
 {
@@ -26,8 +27,17 @@ namespace MultimediaSite.Business
                             .ToList();
 
             return tags;
-
                                 
+        }
+
+        public List<TagDTO> GetTagList()
+        {
+            return _ctx.TAG.AsNoTracking()
+                       .Select(x => new TagDTO {
+                           TagId = x.TAGID,
+                           TagName = x.TAGNAME
+                       })
+                       .ToList();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿<div class="modal-header">
     <p class="pull-left movie-modal-headline">
-        <b>Insert News</b><br />
+        <b>{{transactionDisplay}} News</b><br />
     </p>
     <button type="button" class="close" (click)="activeModal.close('close')" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 </div>
@@ -27,11 +27,11 @@
             </div>
             <div class="col-lg-4">
                 <label>News Date</label>
-                <input type="date" [(ngModel)]="newsItem.NewsDate" />
+                <input type="date" [ngModel]="newsItem.NewsDate | date:'yyyy-MM-dd'" />
             </div>
             <div class="col-lg-4">
                 <label>Publish Date</label>
-                <input type="date" [(ngModel)]="newsItem.PublishedDate" />
+                <input type="date" [ngModel]="newsItem.PublishedDate | date:'yyyy-MM-dd'" />
             </div>
         </div>
         <br />
@@ -56,24 +56,22 @@
         </div>
         <br /> 
         <div>
-            <label>Tags</label>
+            <label><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> Tags</label>
             <p>Select applicable tags below:</p>
-            <div class="btn-group" role="group" aria-label="Tags">
-                <button type="button" class="btn btn-success btn-xs" style="margin-right:5px">World</button>
-                <button type="button" class="btn btn-success btn-xs" style="margin-right:5px">Science</button>
-                <button type="button" class="btn btn-success btn-xs" style="margin-right:5px">Politics</button>
+            <div class="btn-group" role="group" aria-label="Tags" *ngFor="let tag of tagList">
+                <button type="button" class="btn btn-success btn-xs" style="margin-right:5px" (click)="tagSelected(tag)">{{tag.TagName}}</button>
             </div>
         </div>
         <br />
         <div class="input-group">
             <span class="input-group-addon" id="inputTags">Selected Tags</span>
-            <input type="text" class="form-control" readonly placeholder="Selected Tags" aria-describedby="inputTags" [(ngModel)]="newsItem.Headline">
+            <input type="text" class="form-control" readonly placeholder="Selected Tags" aria-describedby="inputTags" [(ngModel)]="selectedTagsDisplay">
         </div>
     </div>
 </div>
 <div class="modal-footer">
     <p>
         <a class="btn btn-primary btn-sm" role="button" (click)="submit()">Submit</a>
-        <a class="btn btn-danger btn-sm" role="button" (click)="activeModal.close('close')">Close</a>
+        <a class="btn btn-default btn-sm" role="button" (click)="activeModal.close('close')">Close</a>
     </p>
 </div>

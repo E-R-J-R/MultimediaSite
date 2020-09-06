@@ -18,6 +18,6 @@ namespace MultimediaSite.Core.DTO
         public string SourceName { get; set; }
         public string SourceUrl { get; set; }
         public string ImageFileName { get; set; }
-        public List<string> Tags { get; set; }
+        public List<TagDTO> Tags { get; set; }
     }
 }

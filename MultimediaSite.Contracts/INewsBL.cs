@@ -7,7 +7,7 @@ namespace MultimediaSite.Contracts
     {
         List<NewsDTO> GetNewsList(int page, int pageSize, string newsImageUrl);
         int InsertNews(List<NewsDTO> newsList);
-        int DeleteNews(List<int> newsIdList);
+        int DeleteNews(int newsId);
         int UpdateNews(NewsDTO newsItem);        
     }
 }

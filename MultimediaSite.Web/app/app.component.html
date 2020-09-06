@@ -18,16 +18,16 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a (click)="menuSelect('News')" role="button">News</a>
+                        <a (click)="menuSelect('News')" role="button"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> News</a>
                     </li>
                     <li>
-                        <a (click)="menuSelect('Documentary')" role="button">Documentary</a>
+                        <a (click)="menuSelect('Documentary')" role="button"><span class="glyphicon glyphicon-film" aria-hidden="true"></span> Documentary</a>
                     </li>
                     <li>
                         <a href="#">Contact</a>
                     </li>
                     <li>
-                        <a (click)="menuSelect('Admin')" role="button">Admin</a>
+                        <a (click)="menuSelect('Admin')" role="button"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> Admin</a>
                     </li>
                 </ul>
             </div>
@@ -67,7 +67,7 @@
                 </div>
             </div>-->
             <div class="col-xs-12">
-                <div class="panel panel-default panel-dark">
+                <div class="panel panel-primary">
                     <div class="panel-heading">
                         <h3 class="panel-title">{{selected}}</h3>
                     </div>

@@ -1,0 +1,16 @@
+﻿<div class="modal-header">
+    <p class="pull-left movie-modal-headline">
+        <b>{{modalHeader}}</b><br />
+    </p>
+    <button type="button" class="close" (click)="activeModal.close('close')" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+</div>
+<div class="modal-body">
+    <p>{{modalBody}}</p>
+</div>
+<div class="modal-footer">
+    <p>
+        <a class="btn btn-primary btn-sm" role="button" (click)="confirm()">Confirm</a>
+        <a class="btn btn-default btn-sm" role="button" (click)="cancel()">Cancel</a>
+    </p>
+</div>
+

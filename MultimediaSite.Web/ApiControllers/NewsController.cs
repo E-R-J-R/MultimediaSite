@@ -29,13 +29,13 @@ namespace MultimediaSite.Web.ApiControllers
         }
 
         [HttpPost]
-        public int DeleteNews(List<int> newsIdList)
+        public int DeleteNews(int newsId)
         {
-            return _newsBL.DeleteNews(newsIdList);
+            return _newsBL.DeleteNews(newsId);
         }
 
         [HttpPost]
-        public int UpdateNews(NewsDTO newsItem)
+        public int UpdateNews([FromBody]NewsDTO newsItem)
         {
             return _newsBL.UpdateNews(newsItem);
         }

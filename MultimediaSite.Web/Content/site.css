@@ -6,11 +6,12 @@
 
 .mainbgcolor {
     /**background-color: #222; DARK**/
-    background-color: #003D7A; 
+    /*background-color: #003D7A;*/ 
+    background-color: white; 
 }
 
 .subbgcolor {
-    background-color: white;
+    background-color: #222;
 }
 
 /* PANEL */

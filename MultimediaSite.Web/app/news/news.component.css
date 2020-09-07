@@ -1,7 +1,7 @@
 ﻿/* NEWS */
 .news-link {
     font-size:20px;
-    line-height:1.1;
+    line-height:1.1 !important;
 }
 
 .news-headline {

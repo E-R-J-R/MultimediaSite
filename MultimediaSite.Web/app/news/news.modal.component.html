@@ -1,34 +1,41 @@
 ﻿
 <div class="modal-header">
-     <p class="pull-left news-link news-modal-headline"><b>{{newsItem.Headline}}</b><br />
-        <span class="news-muted">{{newsItem.NewsDate | date : "MMM d, h:mm a"}}</span><br />       
-    </p> 
-    <button type="button" class="close" (click)="activeModal.close('close')" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-</div>
-<div class="modal-body">
-    <div class="news-modal-source">
-        <span class="news-muted">Source: <a role="button" class="text-info" (click)="goToSource()">{{newsItem.SourceName}}</a></span>
-    </div><br />
-    <div *ngIf='newsItem.ContentType === "article"'>
-        <div class="clearfix content-heading">
-            <div [ngClass]="standardStyle">
-                <img [src]='newsItem.ImageFileName'
-                     [title]='newsItem.Headline'
-                     [style.width.px]='450'
-                     [style.height.px]='300'
-                     [style.padding.px]='15'>
-            </div>
-            <div [innerHTML]="newsItem.Content"></div>
+    <div class="row">
+        <div class="col-sm-11 col-md-11">
+            <p class="pull-left news-link news-modal-headline">
+                <b>{{newsItem.Headline}}</b><br />
+                <span class="news-muted">{{newsItem.NewsDate | date : "MMM d, h:mm a"}}</span><br />
+            </p>
         </div>
-    </div>
-    <div *ngIf='newsItem.ContentType === "custom"'>
-        <div [innerHTML]="newsItem.Content"></div>
-    </div>
-    <div *ngIf='newsItem.ContentType === "video"'>
-        <iframe width="854" height="480" [src]="newsItem.SourceUrl | safeUrl" frameborder="0" allowfullscreen></iframe>
-        {{newsItem.Content}}
-    </div>
+        <div class="col-sm-1 col-md-1">
+            <button type="button" class="close pull-right" (click)="activeModal.close('close')" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+     </div>
 </div>
-<div class="modal-footer">
-    <button type="button" class="pull-right btn btn-primary" (click)="activeModal.close('close')">Close</button>
-</div>
+        <div class="modal-body">
+            <div class="news-modal-source">
+                <span class="news-muted">Source: <a role="button" class="text-info" (click)="goToSource()">{{newsItem.SourceName}}</a></span>
+            </div><br />
+            <div *ngIf='newsItem.ContentType === "article"'>
+                <div class="clearfix content-heading">
+                    <div [ngClass]="standardStyle">
+                        <img [src]='newsItem.ImageFileName'
+                             [title]='newsItem.Headline'
+                             [style.width.px]='450'
+                             [style.height.px]='300'
+                             [style.padding.px]='15'>
+                    </div>
+                    <div [innerHTML]="newsItem.Content"></div>
+                </div>
+            </div>
+            <div *ngIf='newsItem.ContentType === "custom"'>
+                <div [innerHTML]="newsItem.Content"></div>
+            </div>
+            <div *ngIf='newsItem.ContentType === "video"'>
+                <iframe width="854" height="480" [src]="newsItem.SourceUrl | safeUrl" frameborder="0" allowfullscreen></iframe>
+                {{newsItem.Content}}
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="pull-right btn btn-primary" (click)="activeModal.close('close')">Close</button>
+        </div>

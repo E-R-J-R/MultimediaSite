@@ -6,7 +6,7 @@
             <a class="btn btn-primary btn-sm" role="button" (click)="insertNews()"><span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span> Upload</a>
             <a class="btn btn-primary btn-sm" role="button" (click)="review()"><span class="glyphicon glyphicon-check" aria-hidden="true"></span> Review</a>
         </p>
-        <div class="panel panel-default" *ngIf="showReview">
+        <div class="panel panel-primary" *ngIf="showReview">
             <div class="panel-body">
                 <div class="row">
                     <div class="col-sm-6 col-md-4" *ngFor="let news of newsList">

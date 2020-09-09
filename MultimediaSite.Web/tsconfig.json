@@ -10,13 +10,15 @@
     "removeComments": false,
     "noImplicitAny": false,
     "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
     "suppressImplicitAnyIndexErrors": true,
     "typeRoots": [
       "./node_modules/@types/"
     ]
   },
   "exclude": [
-    "node_modules/*",
-    "**/*-aot.ts"
+    "node_modules",
+    "**/*-aot.ts",
+    "bin"
   ]
 }

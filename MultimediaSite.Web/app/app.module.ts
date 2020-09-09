@@ -15,6 +15,10 @@ import { AdminComponent } from './admin/admin.component';
 import { NewsInsertModalComponent } from './admin/news.insert.modal.component'
 import { ConfirmModalComponent } from './shared/confirm.modal.component'
 
+//Wijmo
+import { WjGridModule } from 'wijmo/wijmo.angular2.grid';
+import { WjInputModule } from 'wijmo/wijmo.angular2.input';
+
 //Services
 import { NewsService } from './news/news.service';
 import { MoviesService } from './movies/movies.service';
